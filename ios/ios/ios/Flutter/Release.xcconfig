@@ -1,0 +1,2 @@
+include? "$(PODS_CONFIGURATION_BUILD_DIR)/Pods-Runner.release.xcconfig"
+#include "Generated.xcconfig"
