@@ -1,3 +1,4 @@
+import 'package:easytaskapp/presentation/screens/tasklist.screen.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:easytaskapp/presentation/providers/auth.provider.dart';
@@ -22,11 +23,15 @@ class AppRouter {
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => HomeScreen(),
+        builder: (context, state) => const HomeScreen(),
       ),
       GoRoute(
         path: '/login',
-        builder: (context, state) => LoginScreen(),
+        builder: (context, state) => const LoginScreen(),
+      ),
+      GoRoute(
+        path: '/listtask',
+        builder: (context, state) => TaskListScreen(),
       ),
     ],
   );
