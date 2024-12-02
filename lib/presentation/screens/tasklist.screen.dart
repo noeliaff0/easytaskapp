@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class TaskListScreen extends StatelessWidget {
+  const TaskListScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Consumer<TaskProvider>(
         builder: (context, taskProvider, _) {
           return taskProvider.tasks.isEmpty
-              ? Center(
+              ? const Center(
                   child: Text(
                     "No tasks today,\nAdd a new one to get started",
                     textAlign: TextAlign.center,
@@ -37,17 +39,19 @@ class TaskListScreen extends StatelessWidget {
           showDialog(
             context: context,
             builder: (context) {
-              return AddTaskDialog();
+              return const AddTaskDialog();
             },
           );
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
 }
 
 class AddTaskDialog extends StatefulWidget {
+  const AddTaskDialog({super.key});
+
   @override
   _AddTaskDialogState createState() => _AddTaskDialogState();
 }
@@ -60,23 +64,23 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text("Add New Task"),
+      title: const Text("Add New Task"),
       content: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             TextField(
               controller: _nameController,
-              decoration: InputDecoration(labelText: "Task Name"),
+              decoration: const InputDecoration(labelText: "Task Name"),
             ),
             TextField(
               controller: _timeController,
-              decoration: InputDecoration(labelText: "Task Time"),
+              decoration: const InputDecoration(labelText: "Task Time"),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Select Color:"),
+                const Text("Select Color:"),
                 DropdownButton<Color>(
                   value: _selectedColor,
                   onChanged: (newColor) {
@@ -84,7 +88,7 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
                       _selectedColor = newColor!;
                     });
                   },
-                  items: [
+                  items: const [
                     DropdownMenuItem(
                       value: Colors.blue,
                       child: Text("Blue"),
@@ -109,7 +113,7 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
           onPressed: () {
             Navigator.of(context).pop();
           },
-          child: Text("Cancel"),
+          child: const Text("Cancel"),
         ),
         ElevatedButton(
           onPressed: () {
@@ -123,7 +127,7 @@ class _AddTaskDialogState extends State<AddTaskDialog> {
               Navigator.of(context).pop(); // Cierra el diálogo
             }
           },
-          child: Text("Add"),
+          child: const Text("Add"),
         ),
       ],
     );

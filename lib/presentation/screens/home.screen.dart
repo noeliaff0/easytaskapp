@@ -1,7 +1,7 @@
 import 'package:easytaskapp/core/widgets/buttoms.row.dart';
 import 'package:easytaskapp/core/widgets/calendar.date.dart';
 import 'package:easytaskapp/core/widgets/floating.bottom.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {

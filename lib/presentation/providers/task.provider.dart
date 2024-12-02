@@ -2,7 +2,7 @@ import 'package:easytaskapp/data/models/task.models.dart';
 import 'package:flutter/material.dart';
 
 class TaskProvider extends ChangeNotifier {
-  List<Task> _tasks = []; // Lista de tareas con el nuevo modelo
+  final List<Task> _tasks = []; // Lista de tareas con el nuevo modelo
 
   List<Task> get tasks => _tasks;
 

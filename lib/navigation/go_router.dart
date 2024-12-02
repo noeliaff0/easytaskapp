@@ -31,7 +31,7 @@ class AppRouter {
       ),
       GoRoute(
         path: '/listtask',
-        builder: (context, state) => TaskListScreen(),
+        builder: (context, state) => const TaskListScreen(),
       ),
     ],
   );
